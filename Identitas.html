@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Identitas VIP</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ff6f91;
+            text-align: center;
+        }
+
+        img {
+            width: 345px;
+            height: 215px;
+            margin-top: 10px;
+            border-radius: 12px;
+        }
+
+        form {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            margin: 20px auto;
+            width: 320px;
+            border-radius: 15px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="images/benner.jpg" alt="foto atas">
+
+    <h2>Form Identitas VIP</h2>
+
+    <form onsubmit="return verifikasi()">
+
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" required>
+
+        <label>Umur</label>
+        <input type="number" id="umur" required>
+
+        <label>Tanggal Lahir</label>
+        <input type="date" id="tgl" required>
+
+        <label>Nomor Telepon</label>
+        <input type="tel" id="telp" required>
+
+        <label>Kode Verifikasi VIP</label>
+        <input type="text" id="kode" placeholder="Masukkan code VIP" required>
+
+        <button type="submit">Lanjut</button>
+    </form>
+
+    <script>
+        function verifikasi() {
+            let kode = document.getElementById("kode").value;
+            let kodeBenar = "32411";
+
+            if (kode === kodeBenar) {
+                // ⬇️ PINDAH KE WEB TERAKHIR
+                window.location.href = "akhir.html";
+            } else {
+                alert("Kode verifikasi salah!");
+            }
+
+            return false; // WAJIB
+        }
+    </script>
+
+</body>
+</html>
